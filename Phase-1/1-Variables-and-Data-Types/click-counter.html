@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables-and-data-types</title>
+</head>
+<body>
+    <button id="button_A">Press Me</button>
+    <h3 id="heading_A"></h3>
+
+    <script>
+        const buttonA = document.querySelector('#button_A');
+        const headingA = document.querySelector('#heading_A');
+
+        let count = 1;
+
+        buttonA.onclick = () => {
+            buttonA.textContent = 'Try again!';
+            headingA.textContent = `${count} clicks so far`;
+            count += 1;
+        }
+
+
+        <!-- Other Bits-->
+        const bird = {species: 'Kestrel'};
+        console.log(bird.species); //Kestrel
+    </script>
+</body>
+</html>
+
+<!-- 
+QuerySelector in JavaScript is a method that lets you select and work with HTML elements on your page using CSS-style selectors.
+document.querySelector() finds and returns the first HTML element that matches the CSS selector you provide. If multiple elements match, it returns only the first one it finds.
+
+Arrow function: 
+1. buttonA.onclick = ... is assigning a function to the onclick event handler of buttonA
+2. () => { ... } is the arrow function syntax
+3. The empty parentheses () indicate this function takes no parameters
+-->

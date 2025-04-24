@@ -1,0 +1,13 @@
+Days 1-2: Variables and Data Types CURRENT
+Practice with: let, const, and var (focusing on modern usage of let and const)
+
+Resource: Complete the "JavaScript Variables" section on MDN Web Docs
+
+Project: Create a small "personal dashboard" that stores and displays different data types (strings, numbers, booleans)
+
+Notes:
+
+- It's better to use let rather than var.
+
+
+Perso
