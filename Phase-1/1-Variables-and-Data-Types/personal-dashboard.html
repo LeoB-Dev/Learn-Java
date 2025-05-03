@@ -7,9 +7,9 @@
 </head>
 <body>
     <button id="login_button">Login</button>
+    <p id="active_display"></p>
     <p id="user_name"></p>
     <p id="last_login"></p>
-    <p id="active"></p>
 
     <style>
 
@@ -19,22 +19,27 @@
         const loginButton = document.querySelector('#login_button');
         let userName = document.querySelector('#user_name');
         let lastLogin = document.querySelector('#last_login');
-        let active = document.querySelector('#active'); 
-        let isActive = true;
+        let activeDisplay = document.querySelector('#active_display'); 
+        let isActive = false;
 
-        active.textContent = 'Not Active';
+        activeDisplay.textContent = 'Not Active';
+
 
         loginButton.onclick = () => {
-            if(active.textContent == "User is Active"){
+            if(isActive == true){
+                isActive = false;
                 userName.textContent = '';
                 lastLogin.textContent = '';
-                active.textContent ='Not Active';
                 loginButton.textContent = 'Login';
+                activeDisplay.textContent = 'Not Active';
+                console.log(isActive);
             } else {
+                isActive = true;
                 loginButton.textContent = 'Logout';
                 userName.textContent = 'D3b14n';
                 lastLogin.textContent = new Date().toLocaleString();
-                active.textContent = 'User is Active';
+                activeDisplay.textContent = 'User is Active';
+                console.log(isActive);
             }  
         }
     </script>
