@@ -10,20 +10,32 @@
     <p id="user_name"></p>
     <p id="last_login"></p>
     <p id="active"></p>
+
+    <style>
+
+    </style>
+    
     <script>
         const loginButton = document.querySelector('#login_button');
         let userName = document.querySelector('#user_name');
         let lastLogin = document.querySelector('#last_login');
         let active = document.querySelector('#active'); 
-        isActive = true;
+        let isActive = true;
 
         active.textContent = 'Not Active';
 
         loginButton.onclick = () => {
-            loginButton.textContent = 'Logout';
-            userName.textContent = 'D3b14n';
-            lastLogin.textContent = new Date().toLocaleString();;
-            active.textContent = 'User is Active';
+            if(active.textContent == "User is Active"){
+                userName.textContent = '';
+                lastLogin.textContent = '';
+                active.textContent ='Not Active';
+                loginButton.textContent = 'Login';
+            } else {
+                loginButton.textContent = 'Logout';
+                userName.textContent = 'D3b14n';
+                lastLogin.textContent = new Date().toLocaleString();
+                active.textContent = 'User is Active';
+            }  
         }
     </script>
 </body>
@@ -35,5 +47,8 @@ Tasks:
 - Generate actual date when login was clicked
 - How would I make the login button log you back out?
 - How does isActive work as a boolean?
+
+- If the button is clicked, the user is active, if they click it again they are not
 isActive = true; - only if login has been clicked
+- Replace button with a different button variable
 -->
