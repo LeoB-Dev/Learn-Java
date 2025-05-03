@@ -8,6 +8,9 @@ Project: Create a small "personal dashboard" that stores and displays different 
 Notes:
 
 - It's better to use let rather than var.
+- don't remove the text content, need to hide it instead
 
 
-Perso
+Videos:
+https://www.youtube.com/watch?v=XQEfWd1lh4Q - JavaScript Tutorial For Beginners #40 - The onClick Event
+https://www.youtube.com/watch?v=MkvHPOT4RS8 - How to HIDE and SHOW HTML using JavaScript
