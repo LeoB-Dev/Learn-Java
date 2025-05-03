@@ -8,8 +8,10 @@
 <body>
     <button id="login_button">Login</button>
     <p id="active_display"></p>
-    <p id="user_name"></p>
-    <p id="last_login"></p>
+    <div class="login-container">
+        <p id="user_name"></p>
+        <p id="last_login"></p>
+    </div>
 
     <style>
 
@@ -17,6 +19,7 @@
     
     <script>
         const loginButton = document.querySelector('#login_button');
+        let loginContainer = document.querySelector('.login-container');
         let userName = document.querySelector('#user_name');
         let lastLogin = document.querySelector('#last_login');
         let activeDisplay = document.querySelector('#active_display'); 
@@ -26,16 +29,18 @@
 
 
         loginButton.onclick = () => {
-            if(isActive == true){
+            if(isActive == true) {
                 isActive = false;
-                userName.textContent = '';
-                lastLogin.textContent = '';
+                // userName.textContent = '';
+                // lastLogin.textContent = '';
+                loginContainer.style.display = "none";
                 loginButton.textContent = 'Login';
-                activeDisplay.textContent = 'Not Active';
+                activeDisplay.textContent = 'User is Not Active';
                 console.log(isActive);
             } else {
                 isActive = true;
                 loginButton.textContent = 'Logout';
+                loginContainer.style.display = "Show";
                 userName.textContent = 'D3b14n';
                 lastLogin.textContent = new Date().toLocaleString();
                 activeDisplay.textContent = 'User is Active';
