@@ -16,8 +16,8 @@
     </div>
 
     <div class="container-2">
-        <p id="counter">0</p>
-        <p id="numberType">This number is:</p>
+        <p id="counter">0 (ph)</p>
+        <p id="numberType"></p>
         <div class="plusMinusButtons">
             <button id="minus_Button">-</button>
             <button id="plus_Button">+</button>
@@ -94,23 +94,39 @@
             
         // Container-2
         let counter = document.querySelector('#counter');
-        let minusButton = document.querySelector('#minus_Button');
-        let plusButton = document.querySelector('#plus_Button');
+        const minusButton = document.querySelector('#minus_Button');
+        const plusButton = document.querySelector('#plus_Button');
+        let numberType = document.querySelector('#numberType');
 
-        let count = 1;
+        let count = 0;
 
         minusButton.onclick = () => {
-            counter.textContent = `${count}`;
-            count -= 1;
+            --count;
             console.log(count);
+            counter.textContent = `${count}`;
+            positivity();
         }
 
         plusButton.onclick = () => {
+            ++count;
             console.log(count);
             counter.textContent = `${count}`;
-            count += 1;
+            positivity();
         }
-            
+
+        function positivity(){
+            if (count == 0) {
+                numberType.textContent = 'Number is zero';
+                console.log('Number is zero');
+            } else if (count < 0) {
+                numberType.textContent = 'Number is negative';
+                console.log('Number is negative');
+            } else {
+                numberType.textContent = 'Number is positive';
+                console.log('Number is positive');
+        }
+
+        }   
         }
     </script>
 </body>
@@ -126,4 +142,7 @@ Tasks:
 - If the button is clicked, the user is active, if they click it again they are not
 isActive = true; - only if login has been clicked
 - Replace button with a different button variable
+- Something is wrong with the login button
+- The negative numbers are messing up the maths
+- Why 
 -->
