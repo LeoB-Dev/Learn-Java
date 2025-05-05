@@ -25,15 +25,19 @@
     </div>
 
     <div class="container-3">
-
+        <button id="darkMode">Dark Mode</button> <!--make this a toggle not a p-->
+        <p id="notifications">Notifications</p>
+        <button id="autoSave">Auto-Save</button>
     </div>
 
     <div class="container-4">
+        <p id="variables">Variables</p>
 
     </div>
 
     <style>
         body {
+            background-color: white;
             font-family: roboto;
             display: flex;
             flex-direction: row;
@@ -91,6 +95,7 @@
                 activeDisplay.textContent = 'User is Active';
                 console.log(isActive);
             }
+        }
             
         // Container-2
         let counter = document.querySelector('#counter');
@@ -124,25 +129,13 @@
             } else {
                 numberType.textContent = 'Number is positive';
                 console.log('Number is positive');
-        }
-
+            }
         }   
-        }
     </script>
 </body>
 </html>
 
 <!--
 Tasks:
-- Put this on GitHub
-- Generate actual date when login was clicked
-- How would I make the login button log you back out?
-- How does isActive work as a boolean?
-
-- If the button is clicked, the user is active, if they click it again they are not
-isActive = true; - only if login has been clicked
-- Replace button with a different button variable
-- Something is wrong with the login button
-- The negative numbers are messing up the maths
-- Why 
+- When counter reaches 10, there is a pop up which then shows in your notification tray 
 -->
