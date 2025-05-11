@@ -26,13 +26,14 @@
 
     <div class="container-3">
         <div class="container">
+            <p id="as-header">Auto-Save</p>
             <input type="checkbox" id="check">
             <label for="check" class="button"></label>
-            <input type="checkbox" id="check-2">
-            <label for="check-2" class="button"></label>
         </div>
         <p id="notifications">Notifications</p>
-        <button id="autoSave">Auto-Save</button>
+        <p id="dm-header">Dark Mode</p>
+        <input onclick="darkMode()" type="checkbox" id="check-2">
+        <label for="check-2" class="button"></label>
     </div>
 
     <div class="container-4">
@@ -64,6 +65,7 @@
             width: 170px;
             align-items: center;
             outline: solid 1px black;
+            justify-content: space-around;
             padding: 5px;
             height: 20%;
         }
@@ -78,12 +80,14 @@
         }
 
         .container {
-            width: 100%;
-            height: 100vh;
+            /* width: 100%;
+            height: 40vh; */
             background-color: #fff;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space;
+            flex-direction: column;
+            margin: 0%;
         }
 
         .button {
@@ -182,7 +186,12 @@
                 numberType.textContent = 'Number is positive';
                 console.log('Number is positive');
             }
-        }   
+        }
+
+        function darkMode () {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
     </script>
 </body>
 </html>
@@ -190,4 +199,6 @@
 <!--
 Tasks:
 - When counter reaches 10, there is a pop up which then shows in your notification tray 
+- Top toggle needs white background removed when darkMode is enabled
+- Makes boxes go white when dark mode is enabled
 -->
