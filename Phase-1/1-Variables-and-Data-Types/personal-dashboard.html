@@ -25,13 +25,11 @@
     </div>
 
     <div class="container-3">
-        <div class="container">
-            <p id="as-header">Auto-Save</p>
-            <input type="checkbox" id="check">
-            <label for="check" class="button"></label>
-        </div>
+        <p id="as-header">Auto-Save</p>
+        <input type="checkbox" id="check">
+        <label for="check" class="button"></label>
         <p id="notifications">Notifications</p>
-        <p id="dm-header">Dark Mode</p>
+        <!-- <p id="dm-header">Dark Mode</p> -->
         <input onclick="darkMode()" type="checkbox" id="check-2">
         <label for="check-2" class="button"></label>
     </div>
@@ -79,17 +77,6 @@
             flex-direction: row;
         }
 
-        .container {
-            /* width: 100%;
-            height: 40vh; */
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space;
-            flex-direction: column;
-            margin: 0%;
-        }
-
         .button {
             background-color: #d2d2d2;
             width: 40px;
@@ -131,6 +118,13 @@
         let lastLogin = document.querySelector('#last_login');
         let activeDisplay = document.querySelector('#active_display'); 
         let isActive = false;
+
+        console.log(typeof loginButton);
+        console.log(typeof loginContainer);
+        console.log(typeof userName);
+        console.log(typeof lastLogin);
+        console.log(typeof activeDisplay);
+        console.log(typeof isActive);
 
         activeDisplay.textContent = 'Not Active';
 
@@ -175,6 +169,10 @@
             positivity();
         }
 
+        if (count == 10){
+            confirm("Notification");
+        } // Not working
+
         function positivity(){
             if (count == 0) {
                 numberType.textContent = 'Number is zero';
@@ -188,6 +186,7 @@
             }
         }
 
+
         function darkMode () {
             var element = document.body;
             element.classList.toggle("dark-mode");
@@ -199,6 +198,6 @@
 <!--
 Tasks:
 - When counter reaches 10, there is a pop up which then shows in your notification tray 
-- Top toggle needs white background removed when darkMode is enabled
 - Makes boxes go white when dark mode is enabled
+- Notification at 10 is not working
 -->
