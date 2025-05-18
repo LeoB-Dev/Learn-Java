@@ -31,8 +31,11 @@
         <p id="dm-header">Dark Mode</p>
         <input onclick="darkMode()" type="checkbox" id="check-2">
         <label for="check-2" class="button"></label>
-        <p id="notifications">Notifications</p>
-        <img src="C:\Users\d3b\vscf\learn-js-2025\Phase-1\1-Variables-and-Data-Types\icons8-bell-100.png" alt="notification bell">
+        <div class="noti-tray">
+            <img id="bell-icon" src=".\icons8-bell-100.png" alt="notification bell">
+            <p id="notifications">Notifications</p>
+        </div>
+        <p id="current-notis">Nothing to show yet...</p>
     </div>
 
     <div class="container-4">
@@ -81,6 +84,19 @@
             height: 20%;
         }
 
+        #bell-icon {
+            width: 23px;
+        }
+
+        .noti-tray {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #current-notis {
+            margin: 0;
+        }
         #as-header, #notifications, #dm-header {
             margin: 0;
         }
@@ -218,4 +234,5 @@ Tasks:
 - Makes boxes go white when dark mode is enabled
 - Notification at 10 is not working
 - Add var types to bog instead of console.log
+- Bell does not change colour during dark mode
 -->
