@@ -71,6 +71,7 @@
             justify-content: space-around;
             padding: 5px;
             height: 20%;
+            min-height: 100px;
         }
 
         .container-3 {
@@ -82,6 +83,7 @@
             justify-content: space-between;
             padding: 5px;
             height: 20%;
+            min-height: 100px;
         }
 
         #bell-icon {
@@ -96,6 +98,7 @@
 
         #current-notis {
             margin: 0;
+            text-align: center;
         }
         #as-header, #notifications, #dm-header {
             margin: 0;
@@ -151,6 +154,7 @@
         let lastLogin = document.querySelector('#last_login');
         let activeDisplay = document.querySelector('#active_display'); 
         let isActive = false;
+        
 
         console.log(typeof loginButton);
         console.log(typeof loginContainer);
@@ -200,6 +204,7 @@
             console.log(count);
             counter.textContent = `${count}`;
             positivity();
+            notiOfTen();
         }
 
         if (count == 10){
@@ -219,6 +224,27 @@
             }
         }
 
+        // Container-3
+        let currentNotis = document.querySelector('#current-notis');
+        let numOfNotis = 0;
+
+        function notiOfTen(){
+            if (count == 10){
+                let confirmNoti = confirm("Notification!");
+                if (confirmNoti == false) {
+                    ++numOfNotis;
+                }
+                console.log(numOfNotis);
+                if (numOfNotis == 1 && confirmNoti == false){ // and user clicked cancel
+                    console.log(confirmNoti);
+                    currentNotis.textContent = "You have " + `${numOfNotis}` + " new notification!";
+                } else if (numOfNotis > 1 && confirmNoti == false){
+                    console.log(confirmNoti);
+                    currentNotis.textContent = "You have " + `${numOfNotis}` + " unread notifications!";
+                }
+            }
+        }
+
 
         function darkMode () {
             var element = document.body;
@@ -235,4 +261,8 @@ Tasks:
 - Notification at 10 is not working
 - Add var types to bog instead of console.log
 - Bell does not change colour during dark mode
+
+Notification Center
+- Make it so that you can accept or ignore the notificaiton and this is reflected within the currentNoti
+- Currently an error 
 -->
